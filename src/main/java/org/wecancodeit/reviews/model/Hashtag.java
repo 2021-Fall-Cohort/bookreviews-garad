@@ -29,6 +29,10 @@ public class Hashtag {
 
     }
 
+    public void addBook(Book book) {
+        books.add(book);
+    }
+
     public String getName() {
         return name;
     }
@@ -54,4 +58,4 @@ public class Hashtag {
         return Objects.hash(id, name, description, imageUrl);
     }
 }
-}
+

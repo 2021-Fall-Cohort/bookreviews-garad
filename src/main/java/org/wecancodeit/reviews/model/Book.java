@@ -28,10 +28,10 @@ public class Book {
     private Genre genre;
 
     @ManyToMany
-    private Hashtag hashtags;
+    private Collection<Hashtag> hashtags;
 
 
-    public Book(String nameOfBook, String author, String publisher, String description, String ratingOfReviewer, String similarBooks,String imageUrl,String reviewBy, String review, Hashtag... hashtag) {
+    public Book(String nameOfBook, String author, String publisher, String description, String ratingOfReviewer, String similarBooks,String imageUrl,String reviewBy, Genre genre,String review, Hashtag... hashtag) {
         this.nameOfBook = nameOfBook;
         this.author = author;
         this.publisher = publisher;
@@ -42,14 +42,15 @@ public class Book {
         this.reviewBy = reviewBy;
         this.reviews = new ArrayList<String >();
         this.reviews.add(review);
-        this.hashtags = (Hashtag) Arrays.asList(hashtag);
+        this.hashtags =  Arrays.asList(hashtag);
+        this.genre = genre;
     }
 
     public Book(){
 
     }
     public void addHashtag(Hashtag hashtag){
-
+        hashtags.add(hashtag);
     }
 
     public String getNameOfBook() {

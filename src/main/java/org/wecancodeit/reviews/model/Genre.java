@@ -41,6 +41,10 @@ public class Genre {
         return imageUrl;
     }
 
+    public Collection<Book> getBooks() {
+        return books;
+    }
+
     public long getId(){
         return id;
     }
